@@ -1,0 +1,67 @@
+Turn off your anti-virus to enable the email sending feature
+
+TenantName = "JessieGross"
+emailDefault = "automateandchill@gmail.com";
+passwordDefault = "Automate&chill1";
+
+
+
+Google Drive upload
+1. Create a googledrive account
+2. Create a folder (must do this to get the folder ID in the URL)
+4. Go to https://console.developers.google.com/iam-admin -> Service Accounts -> Create one 
+-> Copy the part in the "email" section and paste into GGDriveScope ID -> Click on "Create Key" at the bottom, choose .p12
+-> Save the downloaded key and direct the path of CertificatePath in GGS to that key, CertificatePassword should be "nosecret"
+5. Make sure your folder on GGdrive is share with "anyone with the link can edit"
+
+
+
+
+
+
+How to publish a new process and get a release key to start a job:
+
+1. Log in your orchestrator so it can link to swagger
+2. Go to https://platform.uipath.com/swagger/ui/index#/Releases
+3. Releases (/odata/Releases (GET))
+4. Search for release key
+5. Change that in your JSON object
+
+How to start a job in Android
+
+1. To see that format of the object, got to https://platform.uipath.com/swagger/ui/index#/Releases
+2. POST /odata/Jobs/UiPath.Server.Configuration.OData.StartJob
+3. This is what needs to be included in the JSON object
+{
+  "startInfo": {
+    "ReleaseKey": "string",
+    "Strategy": "All",
+    "RobotIds": [
+      0
+    ],
+    "NoOfRobots": 0,
+    "JobsCount": 0,
+    "Source": "Manual",
+    "InputArguments": "string"
+    }
+   }
+
+
+This is how I did it:
+
+JSONObject requestBody = new JSONObject();
+JSONObject innerRequestBody = new JSONObject();
+JSONObject inputArguments = new JSONObject();
+
+inputArguments.put("email", emailInput.getText().toString());
+inputArguments.put("userClassChoice", userClassChoice);
+innerRequestBody.put("ReleaseKey", releaseKey);
+innerRequestBody.put("Strategy", "All");
+innerRequestBody.put("RobotIds",new JSONArray());
+innerRequestBody.put("InputArguments", inputArguments.toString());
+requestBody.put("startInfo", innerRequestBody);
+
+4. Use this to invoke it. See full code in the app
+
+JsonObjectRequest jsonObjectRequest = new JsonObjectRequest (Request.Method.POST, urlJob, requestBody, new Response.Listener<JSONObject>()
+

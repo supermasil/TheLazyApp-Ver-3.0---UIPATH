@@ -1,0 +1,63 @@
+{
+  "name": "AutomatePrototype",
+  "description": "Blank Process",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.4.6884.25683]",
+    "UiPath.Mail.Activities": "[1.2.6863.29868]",
+    "BalaReva.Externals.Activities": "[4.0.3]",
+    "UiPathTeam.GoogleDrive.Activities": "[0.9.2]",
+    "UiPath.WebAPI.Activities": "[1.2.6863.33980]",
+    "OpenWebClient": "[2.0.1]",
+    "UiPath.System.Activities": "[18.4.1]",
+    "UiPath.UIAutomation.Activities": "[18.4.2]",
+    "UiPathTeam.XPathWebScrape.Activities": "[1.0.1]",
+    "HtmlAgilityPack": "[1.8.11]",
+    "UiPath.Python.Activities": "[1.1.6863.33404]",
+    "UiPath.Java.Activities": "[1.0.6863.33114]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "18.4.0.6",
+  "projectVersion": "1.0.6934.38322",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "email",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": true,
+        "hasDefault": false
+      },
+      {
+        "name": "className",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": true,
+        "hasDefault": false
+      },
+      {
+        "name": "classLink",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": true,
+        "hasDefault": false
+      },
+      {
+        "name": "dataTypes",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": true,
+        "hasDefault": false
+      }
+    ],
+    "output": []
+  }
+}

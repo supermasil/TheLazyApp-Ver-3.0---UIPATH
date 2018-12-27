@@ -1,0 +1,167 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="SendGoogleDrive"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ga="clr-namespace:GoogleDrive.Activities;assembly=GoogleDrive.Activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="shareLink" Type="OutArgument(x:String)" />
+    <x:Property Name="className" Type="InArgument(x:String)" />
+    <x:Property Name="classPath" Type="InArgument(x:String)" />
+    <x:Property Name="zipPath" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>SendGoogleDrive_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SendGoogleDrive" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="Sending to Google Drive" />
+    <ga:GoogleAuthenticationScope ClientSecret="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="1. Create a googledrive account.&#xA;2. Create a folder (must do this to get the folder ID in the URL)&#xA;4. Go to https://console.developers.google.com/iam-admin -&gt; Service Accounts -&gt; Create one&#xA;-&gt; Copy the part in the &quot;email&quot; section and paste into GGDriveScope ID -&gt; Click on &quot;Create Key&quot; at the bottom, choose .p12&#xA;-&gt; Save the downloaded key and direct the path of CertificatePath in GGDriveScope to that key, CertificatePassword should be &quot;notasecret&quot;.&#xA;5. Make sure your folder on GGdrive is share with &quot;anyone with the link can edit&quot;.&#xD;&#xA;&#xD;&#xA;This email is put here to illustrate how it should look like. You won't be able to use it because you don't have the .p12 key." CertificatePassword="notasecret" CertificatePath="C:\TheLazyApp-6803ddf12606.p12" DisplayName="Google Drive Scope" ID="googledriveupload@thelazyapp-224807.iam.gserviceaccount.com" sap2010:WorkflowViewState.IdRef="GoogleAuthenticationScope_1">
+      <ActivityAction x:TypeArguments="ga:GoogleAuthenticationProperty">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="ga:GoogleAuthenticationProperty" Name="GoogleScope" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="result" />
+            <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="resultGetFile" />
+            <Variable x:TypeArguments="x:String" Name="folderID" />
+            <Variable x:TypeArguments="x:String" Default="cs70" Name="folderName" />
+          </Sequence.Variables>
+          <ga:CreateFolderOnGDrive ContinueOnError="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="Provide this unique folder i.d. from the GDrive url. &#xA;&#xA;E.g.: https://drive.google.com/drive/u/0/folders/1Xn1kMcLkUO0bVEzUxm6U6Z5E3FILb2aU&#xD;&#xA;&#xD;&#xA;This ID is put here to illustrate how it should look like. You won't be able to use it because you don't have the .p12 key." DisplayName="Create Folder" FolderName="[className]" sap2010:WorkflowViewState.IdRef="CreateFolderOnGDrive_1" ParentID="1Xn1kMcLkUO0bVEzUxm6U6Z5E3FILb2aU" Result="[folderID]" />
+          <ga:UploadOnGDrive ContinueOnError="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="File Path is where the zip file will be retrieved on your local machine." DisplayName="Upload File" FilePath="[zipPath]" FolderID="[folderID]" sap2010:WorkflowViewState.IdRef="UploadOnGDrive_1" Result="[result]" />
+          <ui:CommentOut sap2010:Annotation.AnnotationText="This is just the info of the uploaded file" DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <ga:GetGDriveFileInformation ContinueOnError="{x:Null}" Timeout="{x:Null}" DisplayName="Get File Information" FileID="[result]" sap2010:WorkflowViewState.IdRef="GetGDriveFileInformation_1" Result="[resultGetFile]" />
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
+          <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[shareLink]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["https://drive.google.com/drive/u/0/folders/" + folderID]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ActivityAction>
+    </ga:GoogleAuthenticationScope>
+    <sads:DebugSymbol.Symbol>dzFEOlxEZXNrdG9wXFRoZUxhenlBcHAtVUlQQVRIXFNlbmRHb29nbGVEcml2ZS54YW1sFUgDaw4CAQFJBUmOAQIBG0oFaSQCAQJJckmLAQIBHEr6BkqGBwIBGkrcB0qZCAIBGUqXB0q3BwIBGE8JZxQCAQNUOlRAAgEEVgtWyAQCARJXC1fFAgIBC1gLXhsCAQpfC2YUAgEFVo4EVrEEAgEXVrkEVsUEAgEVVr4DVssDAgETV/EBV/0BAgEQV7gCV8ICAgEOV9wBV+cBAgEMZDZkcAIBCGE3YUICAQY=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="LogMessage_4" sap:VirtualizedContainerService.HintSize="384.8,93.6" />
+      <sap2010:ViewStateData Id="CreateFolderOnGDrive_1" sap:VirtualizedContainerService.HintSize="314,226.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="UploadOnGDrive_1" sap:VirtualizedContainerService.HintSize="314,128">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetGDriveFileInformation_1" sap:VirtualizedContainerService.HintSize="314,59.2" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="336,183.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_1" sap:VirtualizedContainerService.HintSize="314,97.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,59.6" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,755.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GoogleAuthenticationScope_1" sap:VirtualizedContainerService.HintSize="384.8,1122.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="406.8,1380.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SendGoogleDrive_1" sap:VirtualizedContainerService.HintSize="446.8,1460.4" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

@@ -1,0 +1,326 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="ReadHTML"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:sn="clr-namespace:System.Net;assembly=System"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="DT1" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="webString" Type="InArgument(x:String)" />
+    <x:Property Name="className" Type="InArgument(x:String)" />
+    <x:Property Name="dataTypes" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ReadHTML_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ReadHTML" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ReadText" />
+      <Variable x:TypeArguments="s:String[]" Name="SplitText" />
+      <Variable x:TypeArguments="sn:WebClient" Name="webClient" />
+      <Variable x:TypeArguments="s:String[]" Name="data" />
+    </Sequence.Variables>
+    <ui:CommentOut sap2010:Annotation.AnnotationText="This is just the old method we used.&#xA;Read html file to text." DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <ui:ReadTextFile Content="[ReadText]" DisplayName="Read Text File" FileName="webString.html" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="Building Data Table" />
+    <Assign sap2010:Annotation.AnnotationText="Spliting the urls based on NewLine." sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[SplitText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[webString.Split(Environment.NewLine.ToArray, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:BuildDataTable DataTable="[DT1]" DisplayName="Build Data Table" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;dataURL&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For each" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[SplitText]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <ui:CommentOut sap2010:Annotation.AnnotationText="This is just the old method we used.&#xA;Using Regex to extract urls." DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence sap2010:Annotation.AnnotationText="Using Regex to extract urls" DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[item]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[Regex.Match(item.ToString, "(?&lt;=href="")(.*?)(?="")").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <If Condition="[className.Equals(&quot;CS170&quot;)]" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <ui:Replace sap2010:Annotation.AnnotationText="This is just because the links are not direct so we need to modify a bit, only for this class." sap2010:WorkflowViewState.IdRef="Replace_3" Input="[item]" Pattern="blob" RegexOption="IgnoreCase, Compiled" Replacement="raw" Result="[item]" />
+              </If.Then>
+            </If>
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item}]" DataTable="[DT1]" DisplayName="Add data row" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Filtering &quot; + dataTypes]" />
+    <Assign sap2010:Annotation.AnnotationText="Splitting the dataTypes received from the Android App." sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[data]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Split(dataTypes, ",")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtering out the urls based on the datatypes." DataTable="[DT1]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT1]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="16">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(0)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(1)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(2)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(3)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(4)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(5)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(6)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(7)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(8)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["dataURL"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Object">[data.GetValue(9)]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <x:Null />
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+    </ui:FilterDataTable>
+    <sads:DebugSymbol.Symbol>dypEOlxEZXNrdG9wXFRoZUxhenlBcHAtVUlQQVRIXFJlYWRIVE1MLnhhbWwzUAPsAQ4CAQFXBV0VAgFJXgVeigECAUdfBWYOAgFDZwVnkQkCAUBoBYYBEgIBLIcBBYcBmwECASmIAQWPAQ4CASWQAQXqARoCAQJecl6HAQIBSGQyZIcBAgFGYTNhPgIBRGciZykCAUFokAFonQECAT5uC4MBFgIBLYcBcocBmAECASqNATKNAUkCASiKATOKATkCASatATatAUECASSwATawAUgCASKlATalAUECASHdATbdAUECASDgATbgAUgCAR6oATaoAUgCARydATadAUECARugATagAUgCARmVATaVAUECARiYATaYAUgCARaQAfgBkAH/AQIBFMgBNsgBSAIBEsUBNsUBQQIBEZABdpABfQIBD8ABNsABSAIBDb0BNr0BQQIBDNgBNtgBSAIBCtUBNtUBQQIBCbgBNrgBSAIBB9ABNtABSAIBBc0BNs0BQQIBBLUBNrUBQQIBA28NfB0CAT19DYEBEgIBM4IBDYIBoQECAS59G31CAgE0fxF/sQICATaCAU2CAVQCATGCATiCAUICAS9/0gF/2gECATt/mQJ/ngICATp/pgJ/rgICATh/4wF/6QECATc=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="ReadTextFile_1" sap:VirtualizedContainerService.HintSize="314,59.2" />
+      <sap2010:ViewStateData Id="Sequence_16" sap:VirtualizedContainerService.HintSize="336,211.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_3" sap:VirtualizedContainerService.HintSize="501.6,113.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogMessage_2" sap:VirtualizedContainerService.HintSize="501.6,93.6" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="501.6,88">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BuildDataTable_2" sap:VirtualizedContainerService.HintSize="501.6,59.2" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="242.4,59.6" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="264.4,212">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_1" sap:VirtualizedContainerService.HintSize="464,113.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Replace_3" sap:VirtualizedContainerService.HintSize="200,99.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,249.6" />
+      <sap2010:ViewStateData Id="AddDataRow_6" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="486,589.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_3" sap:VirtualizedContainerService.HintSize="501.6,723.6" />
+      <sap2010:ViewStateData Id="LogMessage_3" sap:VirtualizedContainerService.HintSize="501.6,93.6" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="501.6,104.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FilterDataTable_1" sap:VirtualizedContainerService.HintSize="501.6,87.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="523.6,1767.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ReadHTML_1" sap:VirtualizedContainerService.HintSize="563.6,1847.6" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
