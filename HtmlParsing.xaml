@@ -75,25 +75,28 @@
       <Variable x:TypeArguments="sn:WebClient" Name="webClient" />
       <Variable x:TypeArguments="ui:GenericValue" Name="scriptResult" />
     </Sequence.Variables>
-    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="Extracting URLs" />
-    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" Url="[classLink]">
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Extracting URLs&quot;]" />
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" Url="[classLink]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="ui:GenericValue" Name="script_op" />
-            </Sequence.Variables>
-            <ui:InjectJsScript InputParameter="{x:Null}" sap2010:Annotation.AnnotationText="Inject the javascript to extract urls." DisplayName="Inject js script 'DIV  ember747'" sap2010:WorkflowViewState.IdRef="InjectJsScript_1" ScriptCode="extractLinks.js">
-              <ui:InjectJsScript.ScriptOutput>
-                <OutArgument x:TypeArguments="x:String">[webString]</OutArgument>
-              </ui:InjectJsScript.ScriptOutput>
-              <ui:InjectJsScript.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d3579472163d4639dd1ab5bdf4ba0e5b" WaitForReady="COMPLETE" />
-              </ui:InjectJsScript.Target>
-            </ui:InjectJsScript>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="ui:GenericValue" Name="script_op" />
+              </Sequence.Variables>
+              <ui:InjectJsScript InputParameter="{x:Null}" sap2010:Annotation.AnnotationText="Inject the javascript to extract urls." DisplayName="Inject js script 'DIV  ember747'" sap2010:WorkflowViewState.IdRef="InjectJsScript_1" ScriptCode="extractLinks.js">
+                <ui:InjectJsScript.ScriptOutput>
+                  <OutArgument x:TypeArguments="x:String">[webString]</OutArgument>
+                </ui:InjectJsScript.ScriptOutput>
+                <ui:InjectJsScript.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d3579472163d4639dd1ab5bdf4ba0e5b" WaitForReady="COMPLETE" />
+                </ui:InjectJsScript.Target>
+              </ui:InjectJsScript>
+            </Sequence>
+            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap2010:WorkflowViewState.IdRef="CloseTab_2" />
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
@@ -124,12 +127,7 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="W" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
-      <ui:SendHotkey.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
-      </ui:SendHotkey.Target>
-    </ui:SendHotkey>
-    <sads:DebugSymbol.Symbol>dy1EOlxEZXNrdG9wXFRoZUxhenlBcHAtVUlQQVRIXEh0bWxQYXJzaW5nLnhhbWwMSQOFAQ4CAQFOBU6GAQIBDU8FZBYCAQVlBX4VAgEEfwWDARUCAQJOck6DAQIBDk+/AU/MAQIBC1ULYRYCAQZ/5AF/5wECAQNZDWAhAgEHWzlbRAIBCVnyAVmDAgIBCA==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dzlEOlxPbmVEcml2ZVxQcm9qZWN0c1xUaGVMYXp5QXBwIC0gVUlQQVRIXEh0bWxQYXJzaW5nLnhhbWwMSQODAQ4CAQFOBU6UAQIBDU8FZxYCAQNoBYEBFQIBAk5yTpEBAgEOT7sBT8gBAgELVQtkFgIBBFYNYhgCAQZjDWN0AgEFWg9hIwIBB1w7XEYCAQla9AFahQICAQg=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -148,7 +146,15 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414,385.6" />
+      <sap2010:ViewStateData Id="CloseTab_2" sap:VirtualizedContainerService.HintSize="336,22" />
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="358,472.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414,571.6" />
       <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,59.6" />
       <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="314,59.6" />
       <sap2010:ViewStateData Id="WriteTextFile_1" sap:VirtualizedContainerService.HintSize="314,87.2" />
@@ -176,8 +182,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="SendHotkey_1" sap:VirtualizedContainerService.HintSize="414,117.6" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436,982.8">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436,1011.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,7 +190,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="htmlString_1" sap:VirtualizedContainerService.HintSize="476,1062.8" />
+      <sap2010:ViewStateData Id="htmlString_1" sap:VirtualizedContainerService.HintSize="476,1091.2" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

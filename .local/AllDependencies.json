@@ -197,7 +197,7 @@
           "lib/net45/Google.Apis.Drive.v3.dll": {}
         }
       },
-      "HtmlAgilityPack/1.8.11": {
+      "HtmlAgilityPack/1.8.12": {
         "type": "package",
         "compile": {
           "lib/Net45/_._": {}
@@ -279,13 +279,16 @@
           "lib/net35-client/OpenWebClient.dll": {}
         }
       },
-      "RestSharp/105.0.1": {
+      "RestSharp/106.3.1": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System.Web"
+        ],
         "compile": {
-          "lib/net4/_._": {}
+          "lib/net452/_._": {}
         },
         "runtime": {
-          "lib/net4/RestSharp.dll": {}
+          "lib/net452/RestSharp.dll": {}
         }
       },
       "SharpZipLib/0.86.0": {
@@ -417,7 +420,7 @@
           }
         }
       },
-      "UiPath/10.0.6913.22031": {
+      "UiPath/10.0.6929.25268": {
         "type": "package",
         "compile": {
           "lib/_._": {}
@@ -429,7 +432,7 @@
           "build/_._": {}
         }
       },
-      "UiPath.Excel.Activities/2.4.6884.25683": {
+      "UiPath.Excel.Activities/2.5.0": {
         "type": "package",
         "dependencies": {
           "ClosedXML": "0.87.1",
@@ -447,15 +450,6 @@
           "lib/net452/UiPath.Excel.dll": {}
         },
         "resource": {
-          "lib/net452/de/UiPath.Excel.Activities.Design.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net452/de/UiPath.Excel.Activities.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net452/de/UiPath.Excel.resources.dll": {
-            "locale": "de"
-          },
           "lib/net452/fr/UiPath.Excel.Activities.Design.resources.dll": {
             "locale": "fr"
           },
@@ -473,6 +467,15 @@
           },
           "lib/net452/ja/UiPath.Excel.resources.dll": {
             "locale": "ja"
+          },
+          "lib/net452/ru/UiPath.Excel.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net452/ru/UiPath.Excel.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net452/ru/UiPath.Excel.resources.dll": {
+            "locale": "ru"
           }
         }
       },
@@ -516,49 +519,49 @@
           }
         }
       },
-      "UiPath.Mail.Activities/1.2.6863.29868": {
+      "UiPath.Mail.Activities/1.3.0": {
         "type": "package",
         "dependencies": {
           "BouncyCastle": "1.8.1",
           "Microsoft.Exchange.WebServices": "2.2.0"
         },
         "compile": {
-          "lib/net40/_._": {}
+          "lib/net452/_._": {}
         },
         "runtime": {
-          "lib/net40/MailKit.dll": {},
-          "lib/net40/MimeKit.dll": {},
-          "lib/net40/UiPath.Mail.Activities.Design.dll": {},
-          "lib/net40/UiPath.Mail.Activities.dll": {},
-          "lib/net40/UiPath.Mail.dll": {}
+          "lib/net452/MailKit.dll": {},
+          "lib/net452/MimeKit.dll": {},
+          "lib/net452/UiPath.Mail.Activities.Design.dll": {},
+          "lib/net452/UiPath.Mail.Activities.dll": {},
+          "lib/net452/UiPath.Mail.dll": {}
         },
         "resource": {
-          "lib/net40/de/UiPath.Mail.Activities.Design.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net40/de/UiPath.Mail.Activities.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net40/de/UiPath.Mail.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net40/fr/UiPath.Mail.Activities.Design.resources.dll": {
+          "lib/net452/fr/UiPath.Mail.Activities.Design.resources.dll": {
             "locale": "fr"
           },
-          "lib/net40/fr/UiPath.Mail.Activities.resources.dll": {
+          "lib/net452/fr/UiPath.Mail.Activities.resources.dll": {
             "locale": "fr"
           },
-          "lib/net40/fr/UiPath.Mail.resources.dll": {
+          "lib/net452/fr/UiPath.Mail.resources.dll": {
             "locale": "fr"
           },
-          "lib/net40/ja/UiPath.Mail.Activities.Design.resources.dll": {
+          "lib/net452/ja/UiPath.Mail.Activities.Design.resources.dll": {
             "locale": "ja"
           },
-          "lib/net40/ja/UiPath.Mail.Activities.resources.dll": {
+          "lib/net452/ja/UiPath.Mail.Activities.resources.dll": {
             "locale": "ja"
           },
-          "lib/net40/ja/UiPath.Mail.resources.dll": {
+          "lib/net452/ja/UiPath.Mail.resources.dll": {
             "locale": "ja"
+          },
+          "lib/net452/ru/UiPath.Mail.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net452/ru/UiPath.Mail.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net452/ru/UiPath.Mail.resources.dll": {
+            "locale": "ru"
           }
         }
       },
@@ -604,7 +607,7 @@
           }
         }
       },
-      "UiPath.System.Activities/18.4.1": {
+      "UiPath.System.Activities/18.4.2": {
         "type": "package",
         "dependencies": {
           "CsvHelper": "2.13.5",
@@ -629,22 +632,34 @@
           "lib/net461/UiPath.System.Activities.dll": {}
         },
         "resource": {
+          "lib/net461/fr/UiPath.System.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/fr/UiPath.System.Activities.resources.dll": {
+            "locale": "fr"
+          },
           "lib/net461/ja/UiPath.System.Activities.Design.resources.dll": {
             "locale": "ja"
           },
           "lib/net461/ja/UiPath.System.Activities.resources.dll": {
             "locale": "ja"
+          },
+          "lib/net461/ru/UiPath.System.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/ru/UiPath.System.Activities.resources.dll": {
+            "locale": "ru"
           }
         }
       },
-      "UiPath.UIAutomation.Activities/18.4.2": {
+      "UiPath.UIAutomation.Activities/18.4.3": {
         "type": "package",
         "dependencies": {
           "AvalonEdit": "5.0.3",
           "Caliburn.Micro": "3.0.1",
           "Extended.Wpf.Toolkit": "2.8.0",
           "Humanizer.Core": "2.4.2",
-          "UiPath": "10.0.6913.22031",
+          "UiPath": "10.0.6929.25268",
           "UiPath.Vision": "1.2.0"
         },
         "compile": {
@@ -666,6 +681,15 @@
           "lib/net461/UiPath.Wizards.dll": {}
         },
         "resource": {
+          "lib/net461/fr/UiPath.UIAutomation.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/fr/UiPath.UiAutomation.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net461/fr/UiPath.Wizards.resources.dll": {
+            "locale": "fr"
+          },
           "lib/net461/ja/UiPath.UIAutomation.Activities.Design.resources.dll": {
             "locale": "ja"
           },
@@ -674,6 +698,15 @@
           },
           "lib/net461/ja/UiPath.Wizards.resources.dll": {
             "locale": "ja"
+          },
+          "lib/net461/ru/UiPath.UIAutomation.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/ru/UiPath.UiAutomation.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net461/ru/UiPath.Wizards.resources.dll": {
+            "locale": "ru"
           }
         }
       },
@@ -687,48 +720,48 @@
           "lib/net452/UiPath.Vision.dll": {}
         }
       },
-      "UiPath.WebAPI.Activities/1.2.6863.33980": {
+      "UiPath.WebAPI.Activities/1.3.0": {
         "type": "package",
         "dependencies": {
           "AvalonEdit": "4.4.2.9744",
           "Newtonsoft.Json": "8.0.3",
-          "RestSharp": "105.0.1"
+          "RestSharp": "106.3.1"
         },
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net452/_._": {}
         },
         "runtime": {
-          "lib/net45/UiPath.Web.Activities.Design.dll": {},
-          "lib/net45/UiPath.Web.Activities.dll": {},
-          "lib/net45/UiPath.Web.dll": {}
+          "lib/net452/UiPath.Web.Activities.Design.dll": {},
+          "lib/net452/UiPath.Web.Activities.dll": {},
+          "lib/net452/UiPath.Web.dll": {}
         },
         "resource": {
-          "lib/net45/de/UiPath.Web.Activities.Design.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net45/de/UiPath.Web.Activities.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net45/de/UiPath.Web.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net45/fr/UiPath.Web.Activities.Design.resources.dll": {
+          "lib/net452/fr/UiPath.Web.Activities.Design.resources.dll": {
             "locale": "fr"
           },
-          "lib/net45/fr/UiPath.Web.Activities.resources.dll": {
+          "lib/net452/fr/UiPath.Web.Activities.resources.dll": {
             "locale": "fr"
           },
-          "lib/net45/fr/UiPath.Web.resources.dll": {
+          "lib/net452/fr/UiPath.Web.resources.dll": {
             "locale": "fr"
           },
-          "lib/net45/ja/UiPath.Web.Activities.Design.resources.dll": {
+          "lib/net452/ja/UiPath.Web.Activities.Design.resources.dll": {
             "locale": "ja"
           },
-          "lib/net45/ja/UiPath.Web.Activities.resources.dll": {
+          "lib/net452/ja/UiPath.Web.Activities.resources.dll": {
             "locale": "ja"
           },
-          "lib/net45/ja/UiPath.Web.resources.dll": {
+          "lib/net452/ja/UiPath.Web.resources.dll": {
             "locale": "ja"
+          },
+          "lib/net452/ru/UiPath.Web.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net452/ru/UiPath.Web.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net452/ru/UiPath.Web.resources.dll": {
+            "locale": "ru"
           }
         }
       },
@@ -1023,13 +1056,13 @@
         "lib/netstandard1.3/Google.Apis.Drive.v3.xml"
       ]
     },
-    "HtmlAgilityPack/1.8.11": {
-      "sha512": "NQWVLLxNk5yWjehhd/q/7OVOXr2udo/wnmfAkgCWML8kGmqhfeAHJ6v5wR0i879hVwQ+Lj4i4Dwarb+yxpWNaw==",
+    "HtmlAgilityPack/1.8.12": {
+      "sha512": "U2X0VhsdgWN6HuC4h+Gah7jEKci15SsYG0Me/0V59INIxVPLq6CCwNxJAThenkuzaZU9m5mFvsFSEL+86GAG4A==",
       "type": "package",
-      "path": "htmlagilitypack/1.8.11",
+      "path": "htmlagilitypack/1.8.12",
       "files": [
         ".signature.p7s",
-        "htmlagilitypack.1.8.11.nupkg.sha512",
+        "htmlagilitypack.1.8.12.nupkg.sha512",
         "htmlagilitypack.nuspec",
         "lib/Net20/HtmlAgilityPack.dll",
         "lib/Net20/HtmlAgilityPack.pdb",
@@ -1195,26 +1228,15 @@
         "openwebclient.nuspec"
       ]
     },
-    "RestSharp/105.0.1": {
-      "sha512": "NtGkYUFbDNw3FGWvQlkqM4wpNM/0lExEudDN3rP1MNbH8f0qM/K9EagDNhq5XzSMST40RD3ikV1J2YaHKvZZ8Q==",
+    "RestSharp/106.3.1": {
+      "sha512": "CFaes/aW50HUI2hOVG8O7jtvI/pW+UMWp6aG1ZoFYaeVTs4m3ku4Fma++AADI5SrFOSsJd71PsGIf8FBhbGUVA==",
       "type": "package",
-      "path": "restsharp/105.0.1",
+      "path": "restsharp/106.3.1",
       "files": [
         ".signature.p7s",
-        "lib/net35-client/RestSharp.dll",
-        "lib/net35-client/RestSharp.xml",
-        "lib/net35/RestSharp.dll",
-        "lib/net35/RestSharp.xml",
-        "lib/net4-client/RestSharp.dll",
-        "lib/net4-client/RestSharp.xml",
-        "lib/net4/RestSharp.dll",
-        "lib/net4/RestSharp.xml",
-        "lib/sl4-wp71/RestSharp.WindowsPhone.dll",
-        "lib/sl4-wp71/RestSharp.WindowsPhone.xml",
-        "lib/sl4/RestSharp.Silverlight.dll",
-        "lib/sl4/RestSharp.Silverlight.xml",
-        "readme.txt",
-        "restsharp.105.0.1.nupkg.sha512",
+        "lib/net452/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.dll",
+        "restsharp.106.3.1.nupkg.sha512",
         "restsharp.nuspec"
       ]
     },
@@ -1475,10 +1497,10 @@
         "system.security.cryptography.x509certificates.nuspec"
       ]
     },
-    "UiPath/10.0.6913.22031": {
-      "sha512": "yBoMsZxZfy9/xqEXW64qBUAH975GEc7taK8LMmYMTHz38P+2fjonAaWUdwLrYca4A+Q5EgljvIRWbyZoyo/jAw==",
+    "UiPath/10.0.6929.25268": {
+      "sha512": "WtksnbPlCcLZxNdg0Qx9k3tICYbXUu3q8qqddl6rSBfRUvWOCZEDKRJ1ojhxM9OlPoJtqCPKDJLT1Y/Jg7M7eA==",
       "type": "package",
-      "path": "uipath/10.0.6913.22031",
+      "path": "uipath/10.0.6929.25268",
       "files": [
         "build/UiPath.targets",
         "build/UiPath/BrowserNativeMessagingImpl.dll",
@@ -1526,28 +1548,28 @@
         "build/UiPath/x64/ShaferFilechck_x64.DLL",
         "build/UiPath/x64/msvcr100.dll",
         "lib/UiPath.Interop.dll",
-        "uipath.10.0.6913.22031.nupkg.sha512",
+        "uipath.10.0.6929.25268.nupkg.sha512",
         "uipath.nuspec"
       ]
     },
-    "UiPath.Excel.Activities/2.4.6884.25683": {
-      "sha512": "oszqRmyvGeYnC1HnoBVmje1bYA9uaf5wzUTQgOYe2OGjJRnWcNj3iEdzhefvuPluel+av4Lm41AQor5NXwAs4g==",
+    "UiPath.Excel.Activities/2.5.0": {
+      "sha512": "CCiiGBAS+Y2wYrAR/tE+II4bH5cNXBdFrbc4C4rKwW7lMqwTupELIhJolDtJSqPT8HqGqvg0Pob832laRxYS0A==",
       "type": "package",
-      "path": "uipath.excel.activities/2.4.6884.25683",
+      "path": "uipath.excel.activities/2.5.0",
       "files": [
         "lib/net452/UiPath.Excel.Activities.Design.dll",
         "lib/net452/UiPath.Excel.Activities.dll",
         "lib/net452/UiPath.Excel.dll",
-        "lib/net452/de/UiPath.Excel.Activities.Design.resources.dll",
-        "lib/net452/de/UiPath.Excel.Activities.resources.dll",
-        "lib/net452/de/UiPath.Excel.resources.dll",
         "lib/net452/fr/UiPath.Excel.Activities.Design.resources.dll",
         "lib/net452/fr/UiPath.Excel.Activities.resources.dll",
         "lib/net452/fr/UiPath.Excel.resources.dll",
         "lib/net452/ja/UiPath.Excel.Activities.Design.resources.dll",
         "lib/net452/ja/UiPath.Excel.Activities.resources.dll",
         "lib/net452/ja/UiPath.Excel.resources.dll",
-        "uipath.excel.activities.2.4.6884.25683.nupkg.sha512",
+        "lib/net452/ru/UiPath.Excel.Activities.Design.resources.dll",
+        "lib/net452/ru/UiPath.Excel.Activities.resources.dll",
+        "lib/net452/ru/UiPath.Excel.resources.dll",
+        "uipath.excel.activities.2.5.0.nupkg.sha512",
         "uipath.excel.activities.nuspec"
       ]
     },
@@ -1573,28 +1595,28 @@
         "uipath.java.activities.nuspec"
       ]
     },
-    "UiPath.Mail.Activities/1.2.6863.29868": {
-      "sha512": "U7V6sLzzjYHgR+0FuMt+T9iSLJimEDRGP2RsuzxRZg1za/Istu8pNsox/NcmO+nVRIPoDk/PRJA0x1iipQ70tw==",
+    "UiPath.Mail.Activities/1.3.0": {
+      "sha512": "WOCrTHJWhn8MncsdC0K+fbjr9ezI0CynqNCY3MQyjbdTJHlmKvG69kC1/XgdHry0r9hknq2dhB4esgyC5jzmsw==",
       "type": "package",
-      "path": "uipath.mail.activities/1.2.6863.29868",
+      "path": "uipath.mail.activities/1.3.0",
       "files": [
-        "lib/net40/MailKit.dll",
-        "lib/net40/MailKit.xml",
-        "lib/net40/MimeKit.dll",
-        "lib/net40/MimeKit.xml",
-        "lib/net40/UiPath.Mail.Activities.Design.dll",
-        "lib/net40/UiPath.Mail.Activities.dll",
-        "lib/net40/UiPath.Mail.dll",
-        "lib/net40/de/UiPath.Mail.Activities.Design.resources.dll",
-        "lib/net40/de/UiPath.Mail.Activities.resources.dll",
-        "lib/net40/de/UiPath.Mail.resources.dll",
-        "lib/net40/fr/UiPath.Mail.Activities.Design.resources.dll",
-        "lib/net40/fr/UiPath.Mail.Activities.resources.dll",
-        "lib/net40/fr/UiPath.Mail.resources.dll",
-        "lib/net40/ja/UiPath.Mail.Activities.Design.resources.dll",
-        "lib/net40/ja/UiPath.Mail.Activities.resources.dll",
-        "lib/net40/ja/UiPath.Mail.resources.dll",
-        "uipath.mail.activities.1.2.6863.29868.nupkg.sha512",
+        "lib/net452/MailKit.dll",
+        "lib/net452/MailKit.xml",
+        "lib/net452/MimeKit.dll",
+        "lib/net452/MimeKit.xml",
+        "lib/net452/UiPath.Mail.Activities.Design.dll",
+        "lib/net452/UiPath.Mail.Activities.dll",
+        "lib/net452/UiPath.Mail.dll",
+        "lib/net452/fr/UiPath.Mail.Activities.Design.resources.dll",
+        "lib/net452/fr/UiPath.Mail.Activities.resources.dll",
+        "lib/net452/fr/UiPath.Mail.resources.dll",
+        "lib/net452/ja/UiPath.Mail.Activities.Design.resources.dll",
+        "lib/net452/ja/UiPath.Mail.Activities.resources.dll",
+        "lib/net452/ja/UiPath.Mail.resources.dll",
+        "lib/net452/ru/UiPath.Mail.Activities.Design.resources.dll",
+        "lib/net452/ru/UiPath.Mail.Activities.resources.dll",
+        "lib/net452/ru/UiPath.Mail.resources.dll",
+        "uipath.mail.activities.1.3.0.nupkg.sha512",
         "uipath.mail.activities.nuspec"
       ]
     },
@@ -1628,10 +1650,10 @@
         "uipath.python.activities.nuspec"
       ]
     },
-    "UiPath.System.Activities/18.4.1": {
-      "sha512": "as5UP5a3OqQI5OM9+ouA9ePtHkjg7XWoFjYHyRDkLVTVWIu3fmdPudkzcLkH0Nr+iNXeab1CkrqmST38XSLAPA==",
+    "UiPath.System.Activities/18.4.2": {
+      "sha512": "AbRu7ROOp5f2WDpuQNcQalwjusixbIAlP+rzdSKCmXnaW8J8E969GSoxeCf2nk010c4NOvqQQM5NAd8xdfJgFg==",
       "type": "package",
-      "path": "uipath.system.activities/18.4.1",
+      "path": "uipath.system.activities/18.4.2",
       "files": [
         "lib/net461/ActiproSoftware.Docking.Wpf.dll",
         "lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
@@ -1645,16 +1667,20 @@
         "lib/net461/UiPath.OrchestratorClient.dll",
         "lib/net461/UiPath.System.Activities.Design.dll",
         "lib/net461/UiPath.System.Activities.dll",
+        "lib/net461/fr/UiPath.System.Activities.Design.resources.dll",
+        "lib/net461/fr/UiPath.System.Activities.resources.dll",
         "lib/net461/ja/UiPath.System.Activities.Design.resources.dll",
         "lib/net461/ja/UiPath.System.Activities.resources.dll",
-        "uipath.system.activities.18.4.1.nupkg.sha512",
+        "lib/net461/ru/UiPath.System.Activities.Design.resources.dll",
+        "lib/net461/ru/UiPath.System.Activities.resources.dll",
+        "uipath.system.activities.18.4.2.nupkg.sha512",
         "uipath.system.activities.nuspec"
       ]
     },
-    "UiPath.UIAutomation.Activities/18.4.2": {
-      "sha512": "U2xiBCfp/Yh5kQnz0xos5fS/mXg7iwGu30kmfeDIz/UC8GZ/seEUIxdo/1wydN/1F6z9qNc5VEUnYgvwZr0jZQ==",
+    "UiPath.UIAutomation.Activities/18.4.3": {
+      "sha512": "uM6KCbJzxv/OcUbOfyYVqJqQ9f5naEW8TT/2MO3+zpFAyRUhNhkUSyJysQNkuEJtT+RFxanKUVGwa0RYsswoxA==",
       "type": "package",
-      "path": "uipath.uiautomation.activities/18.4.2",
+      "path": "uipath.uiautomation.activities/18.4.3",
       "files": [
         "build/ActiproSoftware.Docking.Wpf.dll",
         "build/ActiproSoftware.Editors.Wpf.dll",
@@ -1675,8 +1701,12 @@
         "build/UiExplorer.exe.config",
         "build/UiPath.Activities.Contracts.dll",
         "build/UiPath.UiAutomation.Activities.dll",
+        "build/fr/UiExplorer.resources.dll",
+        "build/fr/UiPath.UiAutomation.Activities.resources.dll",
         "build/ja/UiExplorer.resources.dll",
-        "content/Resources/NodeMatchRules.xml",
+        "build/ja/UiPath.UiAutomation.Activities.resources.dll",
+        "build/ru/UiExplorer.resources.dll",
+        "build/ru/UiPath.UiAutomation.Activities.resources.dll",
         "lib/net461/ActiproSoftware.Docking.Wpf.dll",
         "lib/net461/ActiproSoftware.Editors.Wpf.dll",
         "lib/net461/ActiproSoftware.Ribbon.Wpf.dll",
@@ -1690,10 +1720,16 @@
         "lib/net461/UiPath.UIAutomation.Activities.Design.dll",
         "lib/net461/UiPath.UiAutomation.Activities.dll",
         "lib/net461/UiPath.Wizards.dll",
+        "lib/net461/fr/UiPath.UIAutomation.Activities.Design.resources.dll",
+        "lib/net461/fr/UiPath.UiAutomation.Activities.resources.dll",
+        "lib/net461/fr/UiPath.Wizards.resources.dll",
         "lib/net461/ja/UiPath.UIAutomation.Activities.Design.resources.dll",
         "lib/net461/ja/UiPath.UiAutomation.Activities.resources.dll",
         "lib/net461/ja/UiPath.Wizards.resources.dll",
-        "uipath.uiautomation.activities.18.4.2.nupkg.sha512",
+        "lib/net461/ru/UiPath.UIAutomation.Activities.Design.resources.dll",
+        "lib/net461/ru/UiPath.UiAutomation.Activities.resources.dll",
+        "lib/net461/ru/UiPath.Wizards.resources.dll",
+        "uipath.uiautomation.activities.18.4.3.nupkg.sha512",
         "uipath.uiautomation.activities.nuspec"
       ]
     },
@@ -1751,24 +1787,24 @@
         "uipath.vision.nuspec"
       ]
     },
-    "UiPath.WebAPI.Activities/1.2.6863.33980": {
-      "sha512": "KVb4AoIid676+lTSsBD5reFyaRrVc5B/saCtOVGOGrZ/9aZ//OXzFnMTrP0TPlNhrqyWdI1YHRe1JcgCxzQCSQ==",
+    "UiPath.WebAPI.Activities/1.3.0": {
+      "sha512": "gtq8CXRtvmUwZ8eXtl4HLJaXfARjvLk3dKBza/FtTqEzcgXC+bR8pkM7RWdjW+n2LMncWJUjI768lLPidJW2AA==",
       "type": "package",
-      "path": "uipath.webapi.activities/1.2.6863.33980",
+      "path": "uipath.webapi.activities/1.3.0",
       "files": [
-        "lib/net45/UiPath.Web.Activities.Design.dll",
-        "lib/net45/UiPath.Web.Activities.dll",
-        "lib/net45/UiPath.Web.dll",
-        "lib/net45/de/UiPath.Web.Activities.Design.resources.dll",
-        "lib/net45/de/UiPath.Web.Activities.resources.dll",
-        "lib/net45/de/UiPath.Web.resources.dll",
-        "lib/net45/fr/UiPath.Web.Activities.Design.resources.dll",
-        "lib/net45/fr/UiPath.Web.Activities.resources.dll",
-        "lib/net45/fr/UiPath.Web.resources.dll",
-        "lib/net45/ja/UiPath.Web.Activities.Design.resources.dll",
-        "lib/net45/ja/UiPath.Web.Activities.resources.dll",
-        "lib/net45/ja/UiPath.Web.resources.dll",
-        "uipath.webapi.activities.1.2.6863.33980.nupkg.sha512",
+        "lib/net452/UiPath.Web.Activities.Design.dll",
+        "lib/net452/UiPath.Web.Activities.dll",
+        "lib/net452/UiPath.Web.dll",
+        "lib/net452/fr/UiPath.Web.Activities.Design.resources.dll",
+        "lib/net452/fr/UiPath.Web.Activities.resources.dll",
+        "lib/net452/fr/UiPath.Web.resources.dll",
+        "lib/net452/ja/UiPath.Web.Activities.Design.resources.dll",
+        "lib/net452/ja/UiPath.Web.Activities.resources.dll",
+        "lib/net452/ja/UiPath.Web.resources.dll",
+        "lib/net452/ru/UiPath.Web.Activities.Design.resources.dll",
+        "lib/net452/ru/UiPath.Web.Activities.resources.dll",
+        "lib/net452/ru/UiPath.Web.resources.dll",
+        "uipath.webapi.activities.1.3.0.nupkg.sha512",
         "uipath.webapi.activities.nuspec"
       ]
     },
@@ -1798,15 +1834,15 @@
     "": [],
     ".NETFramework,Version=v4.6.1": [
       "BalaReva.Externals.Activities >= 4.0.3 <= 4.0.3",
-      "HtmlAgilityPack >= 1.8.11 <= 1.8.11",
+      "HtmlAgilityPack >= 1.8.12 <= 1.8.12",
       "OpenWebClient >= 2.0.1 <= 2.0.1",
-      "UiPath.Excel.Activities >= 2.4.6884.25683 <= 2.4.6884.25683",
+      "UiPath.Excel.Activities >= 2.5.0 <= 2.5.0",
       "UiPath.Java.Activities >= 1.0.6863.33114 <= 1.0.6863.33114",
-      "UiPath.Mail.Activities >= 1.2.6863.29868 <= 1.2.6863.29868",
+      "UiPath.Mail.Activities >= 1.3.0 <= 1.3.0",
       "UiPath.Python.Activities >= 1.1.6863.33404 <= 1.1.6863.33404",
-      "UiPath.System.Activities >= 18.4.1 <= 18.4.1",
-      "UiPath.UIAutomation.Activities >= 18.4.2 <= 18.4.2",
-      "UiPath.WebAPI.Activities >= 1.2.6863.33980 <= 1.2.6863.33980",
+      "UiPath.System.Activities >= 18.4.2 <= 18.4.2",
+      "UiPath.UIAutomation.Activities >= 18.4.3 <= 18.4.3",
+      "UiPath.WebAPI.Activities >= 1.3.0 <= 1.3.0",
       "UiPathTeam.GoogleDrive.Activities >= 0.9.2 <= 0.9.2",
       "UiPathTeam.XPathWebScrape.Activities >= 1.0.1 <= 1.0.1"
     ]
@@ -1818,9 +1854,9 @@
     "restore": {
       "projectUniqueName": "AutomatePrototype",
       "projectName": "AutomatePrototype",
-      "projectPath": "D:\\OneDrive\\Projects\\TheLazyApp-UIPATH\\.local",
+      "projectPath": "D:\\OneDrive\\Projects\\TheLazyApp - UIPATH\\.local",
       "packagesPath": "C:\\Users\\khoah\\.nuget\\packages\\",
-      "outputPath": "D:\\OneDrive\\Projects\\TheLazyApp-UIPATH\\.local"
+      "outputPath": "D:\\OneDrive\\Projects\\TheLazyApp - UIPATH\\.local"
     },
     "frameworks": {
       "net461": {
@@ -1833,7 +1869,7 @@
           "HtmlAgilityPack": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.8.11, 1.8.11]"
+            "version": "[1.8.12, 1.8.12]"
           },
           "OpenWebClient": {
             "include": "Runtime",
@@ -1843,7 +1879,7 @@
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[2.4.6884.25683, 2.4.6884.25683]"
+            "version": "[2.5.0, 2.5.0]"
           },
           "UiPath.Java.Activities": {
             "include": "Runtime",
@@ -1853,7 +1889,7 @@
           "UiPath.Mail.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.2.6863.29868, 1.2.6863.29868]"
+            "version": "[1.3.0, 1.3.0]"
           },
           "UiPath.Python.Activities": {
             "include": "Runtime",
@@ -1863,17 +1899,17 @@
           "UiPath.System.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[18.4.1, 18.4.1]"
+            "version": "[18.4.2, 18.4.2]"
           },
           "UiPath.UIAutomation.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[18.4.2, 18.4.2]"
+            "version": "[18.4.3, 18.4.3]"
           },
           "UiPath.WebAPI.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.2.6863.33980, 1.2.6863.33980]"
+            "version": "[1.3.0, 1.3.0]"
           },
           "UiPathTeam.GoogleDrive.Activities": {
             "include": "Runtime",

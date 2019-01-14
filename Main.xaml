@@ -172,7 +172,7 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
-    <sads:DebugSymbol.Symbol>dyZEOlxEZXNrdG9wXFRoZUxhenlBcHAtVUlQQVRIXE1haW4ueGFtbCBeA7ABDwIBAWgJbSECAS5wDXclAgEkehGAASkCARyDARWJAS0CARSMARmTATECAQqWAR2cATUCAQJrR2tSAgEyakZqUQIBMGidAmivAgIBL3NKc1UCASxySXJOAgEqdUp1VQIBKHCnAnC2AgIBJ3RKdFUCASV9WX1uAgEifEx8UQIBIHqNAnqcAgIBH35OflkCAR2FAVKFAWcCARqHAVWHAV4CARiDAYECgwGPAgIBF4YBUoYBXQIBFZEBVJEBXQIBEpABVpABawIBEI4BV44BaAIBDowBlwKMAa0CAgENjwFWjwFhAgELmAFWmAFdAgEImQFgmQFxAgEGlgGbApYBqwICAQWaAVqaAWUCAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>dzJEOlxPbmVEcml2ZVxQcm9qZWN0c1xUaGVMYXp5QXBwIC0gVUlQQVRIXE1haW4ueGFtbCBeA7ABDwIBAWgJbSECAS5wDXclAgEkehGAASkCARyDARWJAS0CARSMARmTATECAQqWAR2cATUCAQJrR2tSAgEyakZqUQIBMGidAmivAgIBL3NKc1UCASxySXJOAgEqdUp1VQIBKHCnAnC2AgIBJ3RKdFUCASV9WX1uAgEifEx8UQIBIHqNAnqcAgIBH35OflkCAR2FAVKFAWcCARqHAVWHAV4CARiDAYECgwGPAgIBF4YBUoYBXQIBFZEBVJEBXQIBEpABVpABawIBEI4BV44BaAIBDowBlwKMAa0CAgENjwFWjwFhAgELmAFWmAFdAgEImQFgmQFxAgEGlgGbApYBqwICAQWaAVqaAWUCAQM=</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -289,7 +289,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Flowchart_2" sap:VirtualizedContainerService.HintSize="704,1003.6" />
+      <sap2010:ViewStateData Id="Flowchart_2" sap:VirtualizedContainerService.HintSize="704,963.6" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
